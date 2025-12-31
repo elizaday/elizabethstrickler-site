@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elizabeth Strickler | Media Futurist</title>
+    <meta name="description" content="Elizabeth Strickler is a media futurist, educator, and builder working at the intersection of AI, media, art, and innovation.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-bg: #faf9f7;
+            --color-text: #1a1a1a;
+            --color-text-secondary: #5a5a5a;
+            --color-accent: #2d4a3e;
+            --color-accent-light: #e8eeeb;
+            --color-border: #e0ddd8;
+            --font-serif: 'Instrument Serif', Georgia, serif;
+            --font-sans: 'DM Sans', -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 18px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background-color: var(--color-bg);
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-name {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+
+        .site-name a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--color-text);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 8rem 0 5rem;
+            border-bottom: 1px solid var(--color-border);
+            margin-top: 0;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            max-width: 900px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+        }
+
+        .hero-text {
+            max-width: 680px;
+            color: var(--color-text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .hero-text p {
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Thesis Section */
+        .thesis {
+            padding: 5rem 0;
+            background-color: var(--color-accent);
+            color: #fff;
+        }
+
+        .thesis-content {
+            max-width: 800px;
+        }
+
+        .thesis-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .thesis blockquote {
+            font-family: var(--font-serif);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 400;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
+        }
+
+        .thesis blockquote em {
+            font-style: italic;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        /* Builder Section */
+        .builder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .builder-item {
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .builder-item h3 {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .builder-item p {
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .builder-item .year {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            margin-top: 0.75rem;
+        }
+
+        /* Speaking Section */
+        .speaking-intro {
+            max-width: 600px;
+            margin-bottom: 3rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        .speaking-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .topic-tag {
+            background-color: var(--color-accent-light);
+            color: var(--color-accent);
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            border-radius: 2px;
+        }
+
+        .past-venues {
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .past-venues strong {
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        /* Intensive Section */
+        .intensive {
+            background-color: var(--color-accent-light);
+            border-bottom: none;
+        }
+
+        .intensive-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .intensive-main h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .intensive-main p {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .intensive-sidebar {
+            padding-top: 0.5rem;
+        }
+
+        .endorsement {
+            margin-bottom: 2rem;
+        }
+
+        .endorsement p {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-style: italic;
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+        }
+
+        .endorsement cite {
+            font-family: var(--font-sans);
+            font-style: normal;
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: #fff;
+            padding: 0.875rem 1.75rem;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #1e3329;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-image {
+            aspect-ratio: 4/5;
+            background-color: var(--color-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+
+        .about-text h2 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .about-text p {
+            color: var(--color-text-secondary);
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .credentials {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .credentials p {
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .contact h2 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .contact-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .contact-links a:hover {
+            color: var(--color-text);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            html {
+                font-size: 16px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .hero {
+                padding: 6rem 0 4rem;
+            }
+
+            .intensive-content,
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                max-width: 300px;
+            }
+
+            .contact-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* Subtle animations */
+        @media (prefers-reduced-motion: no-preference) {
+            .hero h1,
+            .hero-text,
+            .thesis blockquote,
+            .section-header,
+            .builder-item,
+            .about-text {
+                animation: fadeUp 0.6s ease-out both;
+            }
+
+            .hero-text { animation-delay: 0.1s; }
+            .thesis blockquote { animation-delay: 0.05s; }
+
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <div class="site-name"><a href="/">Elizabeth Strickler</a></div>
+            <nav>
+                <ul>
+                    <li><a href="#ideas">Ideas</a></li>
+                    <li><a href="#speaking">Speaking</a></li>
+                    <li><a href="#intensive">AI Filmmaking</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>I think about what happens when the physical world becomes virtual, and I've spent 25 years <em>building</em> at that edge.</h1>
+                <div class="hero-text">
+                    <p>I'm Elizabeth Strickler. Media futurist. Educator. Builder. I work at the intersection of AI, media, art, and innovation, connecting patterns across technology, culture, and systems that most people see as separate.</p>
+                    <p>I teach at Georgia State University. I consult for Coca-Cola as an AI media strategist. I read 50 books a year and I'm usually thinking about what's coming five years from now.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="thesis">
+            <div class="container">
+                <div class="thesis-content">
+                    <p class="thesis-label">Core Thesis</p>
+                    <blockquote>Everything in the physical world will be recreated in the virtual world. The important questions are <em>how</em>, <em>by whom</em>, and <em>with what consequences</em>.</blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section id="ideas">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What I've Built</h2>
+                </div>
+                <div class="builder-grid">
+                    <div class="builder-item">
+                        <h3>MindSpring Internet Infrastructure</h3>
+                        <p>First female software engineer. Employee #40. Led the company's web hosting division when the internet was just beginning.</p>
+                        <p class="year">1995</p>
+                    </div>
+                    <div class="builder-item">
+                        <h3>Georgia State University Internet</h3>
+                        <p>Helped build the university's internet infrastructure in the early days of the web.</p>
+                        <p class="year">1994</p>
+                    </div>
+                    <div class="builder-item">
+                        <h3>Kodak Cineon Film System</h3>
+                        <p>Systems engineer running the Silicon Graphics computer for film scanning, special effects, and printing.</p>
+                        <p class="year">1998</p>
+                    </div>
+                    <div class="builder-item">
+                        <h3>Creative Media Industries Institute</h3>
+                        <p>Co-founder. Recognized an abandoned building and proposed transforming it into an innovation hub for media and technology.</p>
+                        <p class="year">2014</p>
+                    </div>
+                    <div class="builder-item">
+                        <h3>Media Entrepreneurship Program</h3>
+                        <p>Created the curriculum and program connecting business, art, and technology for the next generation of media entrepreneurs.</p>
+                        <p class="year">2015</p>
+                    </div>
+                    <div class="builder-item">
+                        <h3>AI Filmmaking Intensive</h3>
+                        <p>A one-day program that has drawn executive producers, studio directors, and innovators to explore AI's role in visual storytelling.</p>
+                        <p class="year">Ongoing</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="speaking">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Speaking</h2>
+                </div>
+                <p class="speaking-intro">I speak about the future of media, AI's transformation of creative industries, and what happens when physical and virtual worlds collide. I'm available for keynotes, panels, and workshops globally.</p>
+                <div class="speaking-topics">
+                    <span class="topic-tag">World Models & AI</span>
+                    <span class="topic-tag">Future of Media</span>
+                    <span class="topic-tag">AI in Creative Industries</span>
+                    <span class="topic-tag">Immersive Experiences</span>
+                    <span class="topic-tag">Media Innovation</span>
+                    <span class="topic-tag">Virtual Worlds</span>
+                </div>
+                <p class="past-venues"><strong>Past venues:</strong> SXSW, TEDx Atlanta, NFT.NYC, World Futures Studies Federation, Infinity Festival Hollywood</p>
+            </div>
+        </section>
+
+        <section id="intensive" class="intensive">
+            <div class="container">
+                <div class="intensive-content">
+                    <div class="intensive-main">
+                        <h2>AI Filmmaking Intensive</h2>
+                        <p>A one-day immersive program where filmmakers, producers, and creatives learn to work with AI as a creative collaborator. Not theory. Practice.</p>
+                        <p>This isn't about replacing filmmakers. It's about understanding how the tools are changing so you can shape what comes next rather than react to it.</p>
+                        <a href="https://luma.com/u7imdoxh" class="cta-button">Inquire About Next Session</a>
+                    </div>
+                    <div class="intensive-sidebar">
+                        <div class="endorsement">
+                            <p>"Elizabeth is at the forefront of where AI and filmmaking intersect."</p>
+                            <cite>Tom Luce, Executive Producer, The Walking Dead</cite>
+                        </div>
+                        <div class="endorsement">
+                            <p>"One of the most important programs for understanding the future of visual storytelling."</p>
+                            <cite>Peter Scott, Former Director of Innovation, Turner Studios (30 years)</cite>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="strickler-headshot.jpg" alt="Elizabeth Strickler">
+                    </div>
+                    <div class="about-text">
+                        <h2>About</h2>
+                        <p>I started at Boston College studying philosophy with Jesuit priests who taught me to see patterns across math, science, culture, music, and art as one interconnected system. That way of thinking has shaped everything since.</p>
+                        <p>I came to Georgia State to teach high school math and fell in love with computer science just as the internet was beginning. I helped build the university's internet infrastructure, then joined MindSpring as employee #40 and its first female software engineer. I led their web hosting division during the early days of the commercial internet.</p>
+                        <p>I returned to GSU to run the Kodak Cineon film system, earned an MFA in digital filmmaking, and started making short films and games. Eventually I became faculty, created the media entrepreneurship program, co-founded the Creative Media Industries Institute, and got jointly appointed in the College of Business.</p>
+                        <p>Now I work as Director of Media Innovation at CMII, consult for Coca-Cola on AI media strategy, and teach courses on AI in the creative industries, immersive experience design, and media ventures.</p>
+                        <div class="credentials">
+                            <p>BA Philosophy, Boston College. BS Computer Science, Georgia State. MFA Digital Filmmaking & Art, Georgia State. Program Chair, Immersive Experience Alliance. Fulbright Project Director.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-links">
+                        <a href="mailto:elizadaynight@gmail.com">Email</a>
+                        <a href="https://www.linkedin.com/in/elizabethstrickler/" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://x.com/elizaday" target="_blank" rel="noopener">X</a>
+                        <a href="https://www.instagram.com/elizadaynight" target="_blank" rel="noopener">Instagram</a>
+                        <a href="https://www.instagram.com/quantum_folk" target="_blank" rel="noopener">Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <p>&copy; 2025 Elizabeth Strickler</p>
+            <p>Media Futurist. Educator. Builder.</p>
+        </div>
+    </footer>
+</body>
+</html>
