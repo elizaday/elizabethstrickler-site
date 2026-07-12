@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Elizabeth Strickler | AI Media Strategist, Speaker, Educator</title>
-<meta name="description" content="Elizabeth Strickler helps leadership teams, studios, and creative organizations direct AI instead of being directed by it. Keynotes, hands-on generative storytelling labs, and embedded consulting.">
+<meta name="description" content="Elizabeth Strickler helps studios, creative leaders, and organizations direct AI inside real production. Keynotes, hands-on generative storytelling labs, and embedded consulting.">
 <meta property="og:title" content="Elizabeth Strickler | AI Media Strategist">
-<meta property="og:description" content="The tool gives speed. The human gives meaning. Keynotes, labs, and embedded AI consulting for creative organizations.">
+<meta property="og:description" content="The tool generates. The human gives meaning. Keynotes, labs, and embedded AI strategy for creative organizations.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Archivo+Narrow:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -31,7 +31,6 @@
   .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:0.12em;text-transform:uppercase;}
   a{color:inherit;}
 
-  /* ---------- nav ---------- */
   nav{
     border-bottom:3px solid var(--ink);
     position:sticky;top:0;background:var(--paper);z-index:50;
@@ -54,7 +53,6 @@
   .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2.5px var(--ink);}
   .btn.ghost:hover{background:var(--ink);color:var(--paper);}
 
-  /* ---------- hero ---------- */
   header{padding:76px 0 60px;border-bottom:3px solid var(--ink);}
   .eyebrow{font-size:13.5px;color:var(--purple);font-weight:600;margin-bottom:26px;}
   h1{
@@ -63,19 +61,17 @@
     text-transform:uppercase;max-width:1000px;
   }
   h1 em{font-style:normal;color:var(--purple);}
-  .herosub{font-size:22px;line-height:1.5;max-width:760px;margin-top:30px;color:var(--body);}
+  .herosub{font-size:22px;line-height:1.5;max-width:860px;margin-top:30px;color:var(--body);}
   .herosub b{font-weight:700;color:var(--ink);}
   .heroctas{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
   .herometa{margin-top:30px;font-size:13px;color:var(--dim);}
   .herometa b{color:var(--purple);font-weight:600;}
 
-  /* ---------- cred strip ---------- */
   .creds{border-bottom:3px solid var(--ink);padding:20px 0;}
-  .creds .row{display:flex;flex-wrap:wrap;gap:12px 34px;justify-content:space-between;
+  .creds .row{display:flex;flex-wrap:wrap;gap:12px 34px;justify-content:center;
     font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.12em;
     text-transform:uppercase;color:var(--dim);}
 
-  /* ---------- quote ---------- */
   .bigquote{padding:80px 0;border-bottom:3px solid var(--ink);}
   .bigquote blockquote{
     font-family:'Archivo',sans-serif;font-weight:800;
@@ -87,9 +83,8 @@
     font-family:'IBM Plex Mono',monospace;font-size:13.5px;letter-spacing:0.12em;
     text-transform:uppercase;color:var(--dim);}
 
-  /* ---------- offers ---------- */
   .offers{padding:80px 0;border-bottom:3px solid var(--ink);}
-  .sectionlabel{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:40px;}
+  .sectionlabel{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:40px;gap:20px;}
   h2{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(32px,4.4vw,54px);
     line-height:1;letter-spacing:-0.015em;text-transform:uppercase;}
   h2 span{color:var(--purple);}
@@ -113,7 +108,6 @@
     border-top:2px solid var(--ink);padding-top:16px;display:block;}
   .cardcta:hover{color:var(--purple-deep);}
 
-  /* ---------- proof ---------- */
   .proof{padding:80px 0;border-bottom:3px solid var(--ink);}
   .proofgrid{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:start;margin-top:40px;}
   .video{position:relative;width:100%;padding-top:56.25%;border:3px solid var(--ink);background:var(--ink);}
@@ -127,7 +121,6 @@
   .resourcelink .m{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;
     text-transform:uppercase;color:var(--purple);margin-top:10px;font-weight:600;}
 
-  /* ---------- about ---------- */
   .about{padding:80px 0;border-bottom:3px solid var(--ink);}
   .aboutgrid{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;margin-top:40px;align-items:start;}
   .headshot{border:3px solid var(--ink);aspect-ratio:4/5;width:100%;height:auto;object-fit:cover;display:block;}
@@ -135,20 +128,27 @@
   .bio p b{color:var(--ink);font-weight:700;}
   .biotools{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;}
 
-  /* ---------- booking ---------- */
   .booking{padding:90px 0;}
-  .booking .inner{max-width:820px;}
+  .booking .inner{max-width:920px;}
   .booking p.lead{font-size:23px;line-height:1.5;color:var(--body);margin-top:26px;}
-  .bookrows{margin-top:36px;border-top:3px solid var(--ink);}
-  .bookrow{display:flex;justify-content:space-between;align-items:center;gap:20px;
-    border-bottom:2px solid var(--rule);padding:20px 4px;text-decoration:none;}
-  .bookrow:hover{background:#EFECE2;}
-  .bookrow .k{font-family:'Archivo',sans-serif;font-weight:800;font-size:22px;text-transform:uppercase;}
-  .bookrow .a{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;
-    letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);white-space:nowrap;}
-  .bookmeta{margin-top:28px;font-size:13px;color:var(--dim);}
+  .inquiry-form{margin-top:36px;border-top:3px solid var(--ink);}
+  .formgrid{display:grid;grid-template-columns:1fr 1fr;}
+  .field{padding:20px 18px;border-bottom:2px solid var(--rule);}
+  .field:nth-child(odd){border-right:2px solid var(--rule);}
+  .field.full{grid-column:1/-1;border-right:none;}
+  label{display:block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.11em;
+    text-transform:uppercase;color:var(--dim);margin-bottom:9px;}
+  input,select,textarea{
+    width:100%;border:0;background:transparent;color:var(--ink);
+    font-family:'Archivo Narrow',sans-serif;font-size:19px;line-height:1.4;outline:none;
+  }
+  input:focus,select:focus,textarea:focus{box-shadow:0 2px 0 var(--purple);}
+  textarea{min-height:145px;resize:vertical;}
+  .formactions{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:22px;flex-wrap:wrap;}
+  .emailfallback{font-size:15px;color:var(--dim);}
+  .emailfallback a{color:var(--purple);font-weight:700;}
+  .bookmeta{margin-top:24px;font-size:13px;color:var(--dim);}
 
-  /* ---------- footer ---------- */
   footer{border-top:3px solid var(--ink);padding:26px 0 34px;}
   .footrow{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:14px;
     font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);}
@@ -156,18 +156,19 @@
   .footrow a:first-child{margin-left:0;}
   .footrow a:hover{color:var(--ink);}
 
-  /* ---------- responsive ---------- */
-  @media (max-width:700px){
-    .bookrow{flex-direction:column;align-items:flex-start;gap:8px;}
-    .bookrow .a{white-space:normal;font-size:12px;}
-    .footrow a{margin-left:14px;}
-  }
   @media (max-width:960px){
     .cards{grid-template-columns:1fr;}
     .card{border-right:none;border-bottom:3px solid var(--ink);}
     .card:last-child{border-bottom:none;}
     .proofgrid,.aboutgrid{grid-template-columns:1fr;}
     .navlinks a:not(.btn){display:none;}
+  }
+  @media (max-width:700px){
+    .sectionlabel{display:block;}
+    .sectionlabel .mono{margin-top:12px;}
+    .formgrid{grid-template-columns:1fr;}
+    .field:nth-child(odd){border-right:none;}
+    .footrow a{margin-left:14px;}
   }
 </style>
 </head>
@@ -189,22 +190,24 @@
 <header id="top">
   <div class="wrap">
     <div class="eyebrow mono">AI Media Strategist &middot; Speaker &middot; Educator</div>
-    <h1>The tool gives speed. <em>The human gives meaning.</em></h1>
-    <p class="herosub">I help leadership teams, studios, and creative organizations <b>direct AI instead of being directed by it</b>. Keynotes, hands-on labs, and embedded consulting, built from real production work inside one of Coca-Cola&rsquo;s content studios and two decades of teaching at Georgia State&rsquo;s Creative Media Industries Institute.</p>
+    <h1>The tool generates. <em>The human gives meaning.</em></h1>
+    <p class="herosub">I help studios, creative leaders, and organizations decide <b>where AI belongs, how to direct it, and what should remain distinctly human</b>. My keynotes, hands-on labs, and consulting draw on building agentic production systems inside StudioNow&rsquo;s embedded operation at Coca-Cola&rsquo;s Atlanta headquarters, and on helping originate and build Georgia State&rsquo;s Creative Media Industries Institute.</p>
     <div class="heroctas">
       <a class="btn" href="#book">Book a Keynote</a>
       <a class="btn ghost" href="#workshops">Bring the Lab to Your Team</a>
     </div>
-    <div class="herometa mono">Based in Atlanta &middot; <b>Booked worldwide</b> &middot; Now booking fall 2026</div>
+    <div class="herometa mono">Based in Atlanta &middot; <b>Available worldwide</b> &middot; Booking fall 2026</div>
   </div>
 </header>
 
 <div class="creds">
   <div class="wrap row">
-    <span>TED Vancouver</span>
+    <span>TEDxAtlanta</span>
     <span>SXSW</span>
     <span>Coca-Cola &middot; StudioNow</span>
-    <span>Directors Guild of America, Atlanta</span>
+    <span>Trilith Studios</span>
+    <span>Dallas Austin Distribution</span>
+    <span>Directors Guild of America Atlanta</span>
     <span>Georgia State CMII</span>
     <span>MENA ICT Forum</span>
   </div>
@@ -227,24 +230,24 @@
       <div class="card">
         <div class="cardnum mono">01</div>
         <h3>Keynotes &amp; Talks</h3>
-        <p>For conferences, leadership summits, and company events. Provocations, not tool demos. Signature talks include:</p>
+        <p>For conferences, leadership summits, and company events. Built around authorship, judgment, and strategy, not a parade of tools. Signature talks include:</p>
         <ul>
-          <li><b>The Script Is a Prompt for Humans.</b> What authorship means when generation is nearly free.</li>
-          <li><b>Directed Compute.</b> How creative leaders turn raw model capability into work that matters.</li>
-          <li><b>Inverting the Loop.</b> Stop putting humans in the AI loop. Put AI in the human loop.</li>
+          <li><b>The Script Is a Prompt for Humans.</b> What happens to authorship, taste, and creative labor when stories and images can be generated instantly.</li>
+          <li><b>Directed Compute.</b> How creative leaders turn abundant machine output into coherent work with intention, standards, and meaning.</li>
+          <li><b>Inverting the Loop.</b> A practical model for making AI answer to human judgment rather than reorganizing human work around the machine.</li>
         </ul>
-        <p>Every talk is rebuilt for your audience. I travel.</p>
+        <p>Every talk is rebuilt for its audience. I travel.</p>
         <div class="spacer"></div>
         <a class="cardcta" href="#book">Inquire about a keynote &rarr;</a>
       </div>
       <div class="card" id="workshops">
         <div class="cardnum mono">02</div>
         <h3>Workshops &amp; Labs</h3>
-        <p><b>The Generative Storytelling Lab:</b> your team writes, directs, and screens a film in one day.</p>
+        <p><b>The Generative Storytelling Lab:</b> in one intensive day, your team develops, directs, and screens original short films using generative production tools.</p>
         <ul>
-          <li><b>Private editions</b> for leadership teams, agencies, and studios. I bring the lab to you, anywhere.</li>
-          <li><b>Public editions</b> at Georgia State&rsquo;s CMII in Atlanta. Production no. 7 runs this July.</li>
-          <li><b>Not a tool tour.</b> Story, workflow, and judgment, ending in a screening your team will still be talking about next quarter.</li>
+          <li><b>Private editions</b> for creative teams, agencies, studios, educators, and leadership groups. I bring the lab to you.</li>
+          <li><b>Public editions</b> at Georgia State&rsquo;s CMII in Atlanta. The seventh public lab takes place July 18, 2026.</li>
+          <li><b>Not a tool tour.</b> Participants learn a production method built around story, visual direction, iteration, and judgment.</li>
         </ul>
         <div class="spacer"></div>
         <a class="cardcta" href="#book">Book a private lab &rarr;</a>
@@ -252,9 +255,10 @@
       <div class="card" id="consulting">
         <div class="cardnum mono">03</div>
         <h3>Consulting</h3>
-        <p><b>Embedded AI strategy for media and creative organizations.</b></p>
-        <p>I have spent the past six months inside StudioNow, a production partner of Coca-Cola, building script generation and evaluation systems that working producers actually use.</p>
-        <p>That is the kind of engagement I take: embedded, hands-on, and measured by whether the work ships, not by the deck it came in.</p>
+        <p><b>Embedded AI strategy for media, entertainment, and creative organizations.</b></p>
+        <p>Inside StudioNow&rsquo;s long-standing embedded operation at Coca-Cola&rsquo;s Atlanta headquarters, I built an agentic scripting system, trained producers to understand how AI content is created and how to produce with AI talent, and advised creative leadership on AI strategy.</p>
+        <p>Additional consulting and creative technology work includes Trilith Studios, Dallas Austin Distribution, and organizations across film, immersive media, education, and emerging technology.</p>
+        <p>Measured by whether people can use the system, make better decisions, and ship stronger work, not by the deck it came in.</p>
         <div class="spacer"></div>
         <a class="cardcta" href="#book">Start a conversation &rarr;</a>
       </div>
@@ -273,8 +277,8 @@
         <iframe src="https://www.youtube.com/embed/Tg-mGNRAQng" title="Films from the Generative Storytelling Lab and Elizabeth Strickler's students" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
       <div class="proofcopy">
-        <p>Two minutes of films made by my students and lab cohorts, most by people who had never made a film before, none of whom will look at creative work the same way again.</p>
-        <p><b>Six cohorts. Every one screened finished work.</b></p>
+        <p>Two minutes of films created by students and lab participants, many of whom had never made a film before.</p>
+        <p><b>Six cohorts. Six screenings. Finished work made in a single day.</b></p>
         <a class="resourcelink" href="https://app.notion.com/p/elizaday/AI-Creative-Resources-27b95c1fd7458012bb1ad0dbb0c5c993" target="_blank" rel="noopener">
           <div class="t">The AI Creative Resources Library</div>
           <div class="d">The living toolbox I maintain for students, lab alumni, and consulting clients. Updated constantly, because the field is.</div>
@@ -294,9 +298,11 @@
     <div class="aboutgrid">
       <img class="headshot" src="images/elizabeth-strickler.jpg" alt="Elizabeth Strickler" loading="lazy">
       <div class="bio" id="biotext">
-        <p><b>Elizabeth Strickler</b> directs Media Entrepreneurship and Innovation at Georgia State University&rsquo;s Creative Media Industries Institute and consults as an AI media strategist through Elizaday LLC, most recently embedded with StudioNow, a production partner of Coca-Cola, building generative systems for working producers.</p>
-        <p>She has spoken at TED Vancouver, SXSW, and the MENA ICT Forum, produced the Directors Guild of America Atlanta AI Seminar, and founded the Immersive Impact Review, a peer-reviewed journal of immersive media.</p>
-        <p>Her background is the full stack of this moment: she built internet infrastructure as a programmer in the dotcom era, holds degrees in philosophy, computer science, and film, and has spent twenty years teaching creative people to understand systems, not just tools.</p>
+        <p><b>Elizabeth Strickler</b> is an AI media strategist, creative technologist, educator, and institution builder working at the intersection of storytelling, production, and emerging technology.</p>
+        <p>At Georgia State University, she directs Media Entrepreneurship and Innovation. She helped originate and build the initiative that became the Creative Media Industries Institute, from its precursor, DAEL, through planning and implementation; designed the institute&rsquo;s technology architecture; and created the core curriculum for its Media Entrepreneurship program.</p>
+        <p>Most recently, she worked inside StudioNow&rsquo;s embedded operation at Coca-Cola&rsquo;s Atlanta headquarters, where she built an agentic scripting system, trained producers to work with AI production methods and talent, and advised creative leadership on AI strategy. Her consulting has also included Trilith Studios and Dallas Austin Distribution.</p>
+        <p>She has spoken at TEDxAtlanta, SXSW, and the MENA ICT Forum; produced the Directors Guild of America Atlanta AI Seminar; and founded the <i>Immersive Impact Review</i>, a peer-reviewed journal of immersive media.</p>
+        <p>Strickler began her career building internet infrastructure and holds degrees in philosophy, computer science, and digital filmmaking. Across three decades, her work has focused on a persistent question: how can people direct powerful technologies without surrendering authorship, judgment, or meaning?</p>
         <div class="biotools">
           <button class="btn ghost" id="copybio" type="button">Copy bio for your program</button>
         </div>
@@ -308,25 +314,56 @@
 <section class="booking" id="book">
   <div class="wrap inner">
     <h2>Book Elizabeth<span>.</span></h2>
-    <p class="lead">Tell me the date, the audience, and what you want them to leave believing. I will tell you honestly whether I am the right person for it.</p>
-    <div class="bookrows">
-      <a class="bookrow" href="mailto:elizadaynight@gmail.com?subject=Keynote%20inquiry">
-        <span class="k">Keynote or talk</span><span class="a">elizadaynight@gmail.com &rarr;</span>
-      </a>
-      <a class="bookrow" href="mailto:elizadaynight@gmail.com?subject=Private%20lab%20inquiry">
-        <span class="k">Private lab for your team</span><span class="a">elizadaynight@gmail.com &rarr;</span>
-      </a>
-      <a class="bookrow" href="mailto:elizadaynight@gmail.com?subject=Consulting%20inquiry">
-        <span class="k">Consulting engagement</span><span class="a">elizadaynight@gmail.com &rarr;</span>
-      </a>
-    </div>
+    <p class="lead">Tell me the date, the audience, and what you want the room to understand, question, or believe differently afterward. I will tell you honestly whether I am the right person for it.</p>
+
+    <form class="inquiry-form" name="booking-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="booking-inquiry">
+      <p hidden><label>Do not fill this out: <input name="bot-field"></label></p>
+      <div class="formgrid">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="organization">Organization</label>
+          <input id="organization" name="organization" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="timeframe">Date or timeframe</label>
+          <input id="timeframe" name="timeframe" type="text" placeholder="October 2026, Q1 retreat, flexible">
+        </div>
+        <div class="field full">
+          <label for="engagement">What are you booking?</label>
+          <select id="engagement" name="engagement" required>
+            <option value="">Choose one</option>
+            <option>Keynote or talk</option>
+            <option>Private lab</option>
+            <option>Consulting engagement</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="outcome">What should the room leave believing?</label>
+          <textarea id="outcome" name="outcome" placeholder="Tell me about the audience, the moment, and what would make the engagement useful." required></textarea>
+        </div>
+      </div>
+      <div class="formactions">
+        <button class="btn" type="submit">Send inquiry</button>
+        <div class="emailfallback">Prefer email? <a href="mailto:elizadaynight@gmail.com">elizadaynight@gmail.com</a></div>
+      </div>
+    </form>
+
     <div class="bookmeta mono">Response within 48 hours &middot; Based in Atlanta &middot; Yes, I fly</div>
   </div>
 </section>
 
 <footer>
   <div class="wrap footrow">
-    <div>&copy; 2026 Elizaday LLC &middot; Atlanta &middot; Made by a human directing an AI, which is rather the point</div>
+    <div>&copy; 2026 Elizaday LLC &middot; Atlanta &middot; Made by a human directing an AI.</div>
     <div>
       <a href="https://www.linkedin.com/in/elizabethstrickler/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://www.instagram.com/quantum_folk/" target="_blank" rel="noopener">Instagram</a>
