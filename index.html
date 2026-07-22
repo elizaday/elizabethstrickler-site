@@ -54,8 +54,15 @@
 
   .creds{border-bottom:3px solid var(--ink);background:#111117;color:var(--paper);padding:26px 0 30px;}
   .credslabel{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#AAA6B7;text-align:center;margin-bottom:22px;}
-  .logo-row{display:grid;grid-template-columns:repeat(6,minmax(110px,1fr));gap:24px;align-items:center;}
-  .logo-item{height:76px;display:flex;align-items:center;justify-content:center;padding:8px 10px;}
+  .logo-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent);}
+  .logo-row{display:flex;align-items:center;width:max-content;animation:logo-scroll 36s linear infinite;}
+  .logo-marquee:hover .logo-row{animation-play-state:paused;}
+  @keyframes logo-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .logo-item{height:76px;display:flex;align-items:center;justify-content:center;padding:8px 10px;margin-right:70px;flex:0 0 auto;}
+  @media (prefers-reduced-motion:reduce){
+    .logo-row{animation:none;}
+    .logo-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none;}
+  }
   .logo-item img{display:block;max-width:100%;max-height:58px;width:auto;height:auto;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.93;}
   .logo-item img.dark-source{filter:grayscale(1) brightness(0) invert(1);}
 
@@ -133,15 +140,13 @@
     .navrow{align-items:flex-start;flex-wrap:wrap;}
     .navlinks{width:100%;gap:12px 16px;flex-wrap:wrap;}
     .navlinks .btn{padding:10px 16px;}
-    .logo-row{grid-template-columns:repeat(3,1fr);}
   }
   @media (max-width:700px){
     .sectionlabel{display:block;}
     .sectionlabel .mono{margin-top:12px;}
     .formgrid{grid-template-columns:1fr;}
     .field:nth-child(odd){border-right:none;}
-    .logo-row{grid-template-columns:repeat(2,1fr);gap:12px;}
-    .logo-item{height:64px;}
+    .logo-item{height:64px;margin-right:44px;}
     .footrow a{margin-left:14px;}
   }
 </style>
@@ -165,7 +170,7 @@
   <div class="wrap">
     <div class="eyebrow mono">AI Media Strategist &middot; Speaker &middot; Educator</div>
     <h1>The tool generates. <em>The human gives meaning.</em></h1>
-    <p class="herosub">I help studios, creative leaders, and organizations decide <b>where AI belongs, how to direct it, and what should remain distinctly human</b>. My keynotes, hands-on labs, and consulting draw on building agentic production systems inside StudioNow&rsquo;s embedded operation at Coca-Cola&rsquo;s Atlanta headquarters, and on helping originate and build Georgia State&rsquo;s Creative Media Industries Institute.</p>
+    <p class="herosub">I help studios, creative leaders, and organizations decide <b>where AI belongs, how to direct it, and what should remain distinctly human</b>. That judgment comes from practice: building agentic production systems inside Coca-Cola&rsquo;s Atlanta headquarters, and helping originate Georgia State&rsquo;s Creative Media Industries Institute.</p>
     <div class="heroctas">
       <a class="btn" href="#book">Book a Keynote</a>
       <a class="btn ghost" href="#workshops">Bring the Lab to Your Team</a>
@@ -174,24 +179,38 @@
   </div>
 </header>
 
-<section class="creds" aria-label="Selected organizations and stages">
-  <div class="wrap">
-    <div class="credslabel">Selected organizations, collaborators &amp; stages</div>
-    <div class="logo-row">
-      <div class="logo-item"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Georgia_State_University_logo.svg" alt="Georgia State University"></div>
-      <div class="logo-item"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Coca-Cola_logo.svg" alt="Coca-Cola"></div>
-      <div class="logo-item"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/TED_logo.svg" alt="TEDxAtlanta"></div>
-      <div class="logo-item"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/SXSW_logo.svg" alt="SXSW"></div>
-      <div class="logo-item"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fulbright_Program_Logo.svg" alt="Fulbright"></div>
-      <div class="logo-item"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/TheHomeDepot.svg" alt="The Home Depot"></div>
-    </div>
-  </div>
-</section>
-
 <section class="bigquote">
   <div class="wrap">
     <blockquote>&ldquo;<em>Astonishing.</em> Like it or not, AI is here, and it is something every filmmaker needs to understand.&rdquo;</blockquote>
     <cite>Tom Luse &middot; Executive Producer, The Walking Dead &middot; on the Generative Storytelling Lab</cite>
+  </div>
+</section>
+
+<section class="creds" aria-label="Selected organizations and stages">
+  <div class="wrap">
+    <div class="credslabel">Selected organizations, collaborators &amp; stages</div>
+    <div class="logo-marquee">
+      <div class="logo-row">
+        <div class="logo-item"><img src="logos/georgia-state.svg" alt="Georgia State University"></div>
+        <div class="logo-item"><img src="logos/coca-cola.svg" alt="Coca-Cola"></div>
+        <div class="logo-item"><img src="logos/tedx.svg" alt="TEDxAtlanta"></div>
+        <div class="logo-item"><img src="logos/sxsw.svg" alt="SXSW"></div>
+        <div class="logo-item"><img src="logos/fulbright.svg" alt="Fulbright"></div>
+        <div class="logo-item"><img src="logos/home-depot.svg" alt="The Home Depot"></div>
+        <div class="logo-item"><img src="logos/studionow.png" alt="StudioNow"></div>
+        <div class="logo-item"><img src="logos/microsoft.svg" alt="Microsoft"></div>
+        <div class="logo-item"><img src="logos/founderz.svg" alt="Founderz"></div>
+        <div class="logo-item" aria-hidden="true"><img src="logos/georgia-state.svg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="logos/coca-cola.svg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="logos/tedx.svg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="logos/sxsw.svg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="logos/fulbright.svg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="logos/home-depot.svg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="logos/studionow.png" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="logos/microsoft.svg" alt=""></div>
+        <div class="logo-item" aria-hidden="true"><img src="logos/founderz.svg" alt=""></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -211,7 +230,6 @@
           <li><b>Directed Compute.</b> How creative leaders turn abundant machine output into coherent work with intention, standards, and meaning.</li>
           <li><b>Inverting the Loop.</b> A practical model for making AI answer to human judgment rather than reorganizing human work around the machine.</li>
         </ul>
-        <p>Every talk is rebuilt for its audience. I travel.</p>
         <div class="spacer"></div>
         <a class="cardcta" href="#book">Inquire about a keynote &rarr;</a>
       </div>
@@ -221,8 +239,8 @@
         <p><b>The Generative Storytelling Lab:</b> in one intensive day, your team develops, directs, and screens original short films using generative production tools.</p>
         <ul>
           <li><b>Private editions</b> for creative teams, agencies, studios, educators, and leadership groups. I bring the lab to you.</li>
-          <li><b>Public editions</b> at Georgia State&rsquo;s CMII in Atlanta. The seventh public lab takes place July 18, 2026.</li>
-          <li><b>Not a tool tour.</b> Participants learn a production method built around story, visual direction, iteration, and judgment.</li>
+          <li><b>Public editions</b> at Georgia State&rsquo;s CMII in Atlanta. The seventh public lab took place July 18, 2026.</li>
+          <li>Participants learn a production method built around story, visual direction, iteration, and judgment.</li>
         </ul>
         <div class="spacer"></div>
         <a class="cardcta" href="#book">Book a private lab &rarr;</a>
@@ -233,7 +251,7 @@
         <p><b>Embedded AI strategy for media, entertainment, and creative organizations.</b></p>
         <p>Inside StudioNow&rsquo;s long-standing embedded operation at Coca-Cola&rsquo;s Atlanta headquarters, I built an agentic scripting system, trained producers to understand how AI content is created and how to produce with AI talent, and advised creative leadership on AI strategy.</p>
         <p>Additional consulting and creative technology work includes Trilith Studios, Dallas Austin Distribution, and organizations across film, immersive media, education, and emerging technology.</p>
-        <p>Measured by whether people can use the system, make better decisions, and ship stronger work, not by the deck it came in.</p>
+        <p>Measured by whether people can use the system, make better decisions, and ship stronger work.</p>
         <div class="spacer"></div>
         <a class="cardcta" href="#book">Start a conversation &rarr;</a>
       </div>
@@ -273,11 +291,10 @@
     <div class="aboutgrid">
       <img class="headshot" src="/elizabeth-strickler.jpg" alt="Elizabeth Strickler" width="800" height="1000" loading="lazy">
       <div class="bio" id="biotext">
-        <p><b>Elizabeth Strickler</b> is an AI media strategist, creative technologist, educator, and institution builder working at the intersection of storytelling, production, and emerging technology.</p>
-        <p>At Georgia State University, she directs Media Entrepreneurship and Innovation. She helped originate and build the initiative that became the Creative Media Industries Institute, from its precursor, DAEL, through planning and implementation; designed the institute&rsquo;s technology architecture; and created the core curriculum for its Media Entrepreneurship program.</p>
-        <p>Most recently, she worked inside StudioNow&rsquo;s embedded operation at Coca-Cola&rsquo;s Atlanta headquarters, where she built an agentic scripting system, trained producers to work with AI production methods and talent, and advised creative leadership on AI strategy. Her consulting has also included Trilith Studios and Dallas Austin Distribution.</p>
-        <p>She has spoken at TEDxAtlanta, SXSW, and the MENA ICT Forum; produced the Directors Guild of America Atlanta AI Seminar; and founded the <i>Immersive Impact Review</i>, a peer-reviewed journal of immersive media.</p>
-        <p>Strickler began her career building internet infrastructure and holds degrees in philosophy, computer science, and digital filmmaking. Across three decades, her work has focused on a persistent question: how can people direct powerful technologies without surrendering authorship, judgment, or meaning?</p>
+        <p><b>Elizabeth Strickler</b> is an AI media strategist and institution builder working at the intersection of storytelling, production, and emerging technology. Across three decades, her work has pursued one question: how can people direct powerful technologies without surrendering authorship, judgment, or meaning?</p>
+        <p>At Georgia State University, she directs Media Entrepreneurship and Innovation. She helped originate the initiative that became the Creative Media Industries Institute, from its precursor, DAEL, through planning and implementation; designed the institute&rsquo;s technology architecture; and created the core curriculum for its Media Entrepreneurship program.</p>
+        <p>Most recently, working inside StudioNow&rsquo;s embedded production operation at Coca-Cola, she built an agentic scripting system, trained producers to work with AI production methods and talent, and advised creative leadership on AI strategy. Her consulting has also included Trilith Studios and Dallas Austin Distribution.</p>
+        <p>She has spoken at TEDxAtlanta, SXSW, and the MENA ICT Forum; produced the Directors Guild of America Atlanta AI Seminar; and founded the <i>Immersive Impact Review</i>, a peer-reviewed journal of immersive media. She began her career building internet infrastructure and holds degrees in philosophy, computer science, and digital filmmaking.</p>
         <div class="biotools">
           <button class="btn ghost" id="copybio" type="button">Copy bio for your program</button>
         </div>
@@ -328,7 +345,7 @@
       </div>
       <div class="formactions">
         <button class="btn" type="submit">Send inquiry</button>
-        <div class="emailfallback">Prefer email? <a href="mailto:elizadaynight@gmail.com">elizadaynight@gmail.com</a></div>
+        <div class="emailfallback">Prefer email? <a href="mailto:hello@elizabethstrickler.com">hello@elizabethstrickler.com</a></div>
       </div>
     </form>
 
@@ -338,7 +355,7 @@
 
 <footer>
   <div class="wrap footrow">
-    <div>&copy; 2026 Elizaday LLC &middot; Atlanta &middot; Made by a human directing an AI.</div>
+    <div>&copy; 2026 Elizaday LLC &middot; Atlanta</div>
     <div>
       <a href="https://www.linkedin.com/in/elizabethstrickler/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://www.instagram.com/quantum_folk/" target="_blank" rel="noopener">Instagram</a>
