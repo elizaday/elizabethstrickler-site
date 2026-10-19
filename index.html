@@ -90,6 +90,7 @@ svg.g .fill{fill:currentColor;stroke:none}
 .readings{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:0 clamp(18px,4vw,64px);text-align:center}
 .readings span{font-family:var(--f-mono);font-size:clamp(9px,1vw,12px);letter-spacing:.12em;text-transform:uppercase;color:var(--dust);line-height:1.5}
 .readings b{display:block;font-weight:500;color:var(--limestone)}
+.readings span{color:var(--dust)}
 .readings i{display:block;font-style:normal;color:var(--ochre);line-height:1.3}
 .readings span{color:var(--limestone)}
 .fig{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--rule);padding-top:12px}
@@ -127,12 +128,11 @@ svg.g .fill{fill:currentColor;stroke:none}
 .sign .tile svg{width:92px;height:92px}
 .sign:hover .tile{color:var(--ochre);border-color:var(--ochre);background:var(--basalt-3)}
 .sign .code{font-family:var(--f-mono);font-size:var(--t-label);letter-spacing:.14em;color:var(--ochre)}
-.sign .name{margin:6px 0 18px;font-family:var(--f-display);font-size:var(--t-h3);line-height:1.1}
-.pair{display:grid;gap:10px}
-.pair-label{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust-2)}
-.tension{display:grid;justify-items:start}
-.pole{font-family:var(--f-mono);font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--limestone);line-height:1.2}
-.cord{position:relative;width:1.5px;height:72px;margin:9px 0 9px 7px;background:linear-gradient(var(--dust-2),var(--rule) 50%,var(--dust-2))}
+.sign .name{margin:6px 0 10px;font-family:var(--f-display);font-size:var(--t-h3);line-height:1.1}
+.root{display:grid;justify-items:start}
+.root-label{margin-top:6px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dust-2);line-height:1.5}
+.pole{font-family:var(--f-mono);font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--dust);line-height:1.2}
+.cord{position:relative;width:1.5px;height:64px;margin:0 0 9px 7px;background:linear-gradient(var(--dust-2),var(--rule) 50%,var(--dust-2))}
 .cord .pull{position:absolute;left:50%;top:50%;width:11px;height:11px;border-radius:50%;background:var(--ochre);box-shadow:0 0 0 5px var(--ochre-glow);transform:translate(-50%,-50%);animation:pull 6.5s ease-in-out var(--delay,0s) infinite alternate}
 .cord .pull::before{content:"";position:absolute;left:50%;top:50%;width:26px;height:1.5px;background:var(--ochre);transform:translate(-50%,-50%)}
 @keyframes pull{from{top:20%}to{top:80%}}
@@ -263,7 +263,7 @@ svg.g .fill{fill:currentColor;stroke:none}
       </div>
 
       <div>
-        <div class="band" role="img" aria-label="Five signs: an eye, a radiant head, an open figure, concentric rings, and a wired head">
+        <div class="band" role="img" aria-label="Five signs: curation, influence, leverage, worldbuilding and ecosystem">
           <div class="cell"><svg class="g hero-g" data-g="eye" viewBox="0 0 64 64"></svg></div>
           <div class="cell"><svg class="g hero-g" data-g="bust" viewBox="0 0 64 64"></svg></div>
           <div class="cell"><svg class="g hero-g" data-g="figure" viewBox="0 0 64 64"></svg></div>
@@ -271,11 +271,11 @@ svg.g .fill{fill:currentColor;stroke:none}
           <div class="cell"><svg class="g hero-g" data-g="wired" viewBox="0 0 64 64"></svg></div>
         </div>
         <div class="readings" aria-hidden="true" style="margin-top:16px">
-          <span><b>Craft</b><i aria-hidden="true">&#8597;</i> Curation</span>
-          <span><b>IP</b><i aria-hidden="true">&#8597;</i> Influence</span>
-          <span><b>Labor</b><i aria-hidden="true">&#8597;</i> Leverage</span>
-          <span><b>Workflow</b><i aria-hidden="true">&#8597;</i> Worlds</span>
-          <span><b>Audience</b><i aria-hidden="true">&#8597;</i> Ecosystem</span>
+          <span><b>Curation</b><i aria-hidden="true">&#8597;</i> Craft</span>
+          <span><b>Influence</b><i aria-hidden="true">&#8597;</i> IP</span>
+          <span><b>Leverage</b><i aria-hidden="true">&#8597;</i> Labor</span>
+          <span><b>Worlds</b><i aria-hidden="true">&#8597;</i> Workflow</span>
+          <span><b>Ecosystem</b><i aria-hidden="true">&#8597;</i> Audience</span>
         </div>
       </div>
 
@@ -311,8 +311,8 @@ svg.g .fill{fill:currentColor;stroke:none}
           <div class="tile"><svg class="g" data-g="eye" viewBox="0 0 64 64" aria-hidden="true"></svg></div>
           <div>
             <div class="code">ES 1</div>
-            <h3 class="name">Radiant eye</h3>
-            <div class="pair"><span class="pair-label">Two readings, both live</span><div class="tension" style="--delay:-0.0s" role="img" aria-label="Craft and Curation, held in tension"><span class="pole">Craft</span><span class="cord" aria-hidden="true"><span class="pull"></span></span><span class="pole">Curation</span></div></div>
+            <h3 class="name">Curation</h3>
+            <div class="root" style="--delay:-0.0s" role="img" aria-label="Curation grows out of Craft and pulls against it"><span class="cord" aria-hidden="true"><span class="pull"></span></span><span class="pole">Craft</span><span class="root-label">Grows from. Pulls against.</span></div>
           </div>
           <div class="gloss">
             <p>Technical skill is getting cheap and taste is getting scarce, yet taste is trained by making. The ability to choose rises in value, and the eye that chooses well still comes from the hands.</p>
@@ -325,8 +325,8 @@ svg.g .fill{fill:currentColor;stroke:none}
           <div class="tile"><svg class="g" data-g="bust" viewBox="0 0 64 64" aria-hidden="true"></svg></div>
           <div>
             <div class="code">ES 2</div>
-            <h3 class="name">Radiant head</h3>
-            <div class="pair"><span class="pair-label">Two readings, both live</span><div class="tension" style="--delay:-1.7s" role="img" aria-label="IP and Influence, held in tension"><span class="pole">IP</span><span class="cord" aria-hidden="true"><span class="pull"></span></span><span class="pole">Influence</span></div></div>
+            <h3 class="name">Influence</h3>
+            <div class="root" style="--delay:-1.7s" role="img" aria-label="Influence grows out of IP and pulls against it"><span class="cord" aria-hidden="true"><span class="pull"></span></span><span class="pole">IP</span><span class="root-label">Grows from. Pulls against.</span></div>
           </div>
           <div class="gloss">
             <p>Value used to sit in owning a finished asset. More and more of it sits in circulation: who carries an idea, who remixes it, and who keeps coming back.</p>
@@ -339,8 +339,8 @@ svg.g .fill{fill:currentColor;stroke:none}
           <div class="tile"><svg class="g" data-g="figure" viewBox="0 0 64 64" aria-hidden="true"></svg></div>
           <div>
             <div class="code">ES 3</div>
-            <h3 class="name">Open figure</h3>
-            <div class="pair"><span class="pair-label">Two readings, both live</span><div class="tension" style="--delay:-3.4s" role="img" aria-label="Labor and Leverage, held in tension"><span class="pole">Labor</span><span class="cord" aria-hidden="true"><span class="pull"></span></span><span class="pole">Leverage</span></div></div>
+            <h3 class="name">Leverage</h3>
+            <div class="root" style="--delay:-3.4s" role="img" aria-label="Leverage grows out of Labor and pulls against it"><span class="cord" aria-hidden="true"><span class="pull"></span></span><span class="pole">Labor</span><span class="root-label">Grows from. Pulls against.</span></div>
           </div>
           <div class="gloss">
             <p>Large, role-based crews give way to small teams with outsized reach. When the machine can supply the hours, the scarce input becomes direction.</p>
@@ -353,8 +353,8 @@ svg.g .fill{fill:currentColor;stroke:none}
           <div class="tile"><svg class="g" data-g="rings" viewBox="0 0 64 64" aria-hidden="true"></svg></div>
           <div>
             <div class="code">ES 4</div>
-            <h3 class="name">Concentric rings</h3>
-            <div class="pair"><span class="pair-label">Two readings, both live</span><div class="tension" style="--delay:-5.1s" role="img" aria-label="Workflow and Worldbuilding, held in tension"><span class="pole">Workflow</span><span class="cord" aria-hidden="true"><span class="pull"></span></span><span class="pole">Worldbuilding</span></div></div>
+            <h3 class="name">Worldbuilding</h3>
+            <div class="root" style="--delay:-5.1s" role="img" aria-label="Worldbuilding grows out of Workflow and pulls against it"><span class="cord" aria-hidden="true"><span class="pull"></span></span><span class="pole">Workflow</span><span class="root-label">Grows from. Pulls against.</span></div>
           </div>
           <div class="gloss">
             <p>Script, shoot, edit is a line. A world is a system you return to: characters, lore and assets that hold together across formats and keep producing stories.</p>
@@ -367,8 +367,8 @@ svg.g .fill{fill:currentColor;stroke:none}
           <div class="tile"><svg class="g" data-g="wired" viewBox="0 0 64 64" aria-hidden="true"></svg></div>
           <div>
             <div class="code">ES 5</div>
-            <h3 class="name">Wired head</h3>
-            <div class="pair"><span class="pair-label">Two readings, both live</span><div class="tension" style="--delay:-6.8s" role="img" aria-label="Audience and Ecosystem, held in tension"><span class="pole">Audience</span><span class="cord" aria-hidden="true"><span class="pull"></span></span><span class="pole">Ecosystem</span></div></div>
+            <h3 class="name">Ecosystem</h3>
+            <div class="root" style="--delay:-6.8s" role="img" aria-label="Ecosystem grows out of Audience and pulls against it"><span class="cord" aria-hidden="true"><span class="pull"></span></span><span class="pole">Audience</span><span class="root-label">Grows from. Pulls against.</span></div>
           </div>
           <div class="gloss">
             <p>The audience stops sitting in the dark. It talks back, makes things, and expects to be let in.</p>
