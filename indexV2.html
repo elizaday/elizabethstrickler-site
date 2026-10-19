@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elizabeth Strickler | AI, Creativity &amp; Emerging Technology</title>
+<meta name="description" content="Elizabeth Strickler is an emerging technology strategist, speaker, and advisor who helps leaders and creative organizations understand what is coming, what it means, and what to do with it.">
+<meta property="og:title" content="Elizabeth Strickler | Emerging Technology Strategist">
+<meta property="og:description" content="Speaking, strategy, and experimental labs at the intersection of AI, creativity, media, and business.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Archivo+Narrow:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F5EF;
+    --ink:#191C1E;
+    --purple:#4B3D8F;
+    --purple-deep:#3A2F73;
+    --rule:#B9B4A6;
+    --dim:#5A5648;
+    --body:#2A2D28;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper);color:var(--ink);font-family:'Archivo Narrow',sans-serif;font-size:19px;line-height:1.5;}
+  ::selection{background:var(--purple);color:var(--paper);}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px;}
+  .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:0.12em;text-transform:uppercase;}
+  a{color:inherit;}
+
+  nav{border-bottom:3px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:50;}
+  .navrow{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:16px;}
+  .navname{font-family:'Archivo',sans-serif;font-weight:900;font-size:19px;text-transform:uppercase;letter-spacing:0.01em;text-decoration:none;white-space:nowrap;}
+  .navname span{color:var(--purple);}
+  .navlinks{display:flex;gap:22px;align-items:center;}
+  .navlinks a{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;color:var(--dim);}
+  .navlinks a:hover{color:var(--ink);}
+  .navlinks a.btn{color:var(--paper);}
+  .navlinks a.btn:hover{color:var(--paper);background:var(--purple-deep);}
+  .btn{display:inline-block;background:var(--purple);color:var(--paper);font-family:'Archivo',sans-serif;font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;padding:12px 22px;border:none;cursor:pointer;}
+  .btn:hover{background:var(--purple-deep);}
+  .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2.5px var(--ink);}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper);}
+
+  header{padding:76px 0 64px;border-bottom:3px solid var(--ink);}
+  .eyebrow{font-size:13.5px;color:var(--purple);font-weight:600;margin-bottom:26px;}
+  h1{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(42px,6.7vw,86px);line-height:0.98;letter-spacing:-0.018em;text-transform:uppercase;max-width:1080px;}
+  h1 em{font-style:normal;color:var(--purple);}
+  .herosub{font-size:22px;line-height:1.5;max-width:900px;margin-top:30px;color:var(--body);}
+  .herosub b{font-weight:700;color:var(--ink);}
+  .frontier{font-family:'Archivo',sans-serif;font-size:18px;font-weight:800;margin-top:24px;color:var(--ink);}
+  .frontier span{color:var(--purple);}
+  .herolinks{display:flex;gap:30px;margin-top:36px;flex-wrap:wrap;}
+  .herolinks a{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--purple);border-bottom:1px solid var(--rule);padding-bottom:5px;}
+  .herolinks a:hover{color:var(--ink);border-bottom-color:var(--ink);}
+  .herometa{margin-top:30px;font-size:13px;color:var(--dim);}
+
+  .career{padding:84px 0;border-bottom:3px solid var(--ink);}
+  .careergrid{display:grid;grid-template-columns:0.8fr 1.55fr;gap:64px;align-items:start;}
+  .career h2{max-width:420px;}
+  .careercopy p{font-size:20px;line-height:1.58;color:var(--body);margin-bottom:20px;}
+  .careerquestion{margin-top:34px;padding:24px 0 0;border-top:3px solid var(--purple);font-family:'Archivo',sans-serif;font-size:clamp(23px,3vw,34px);font-weight:800;line-height:1.2;color:var(--ink);}
+  .careerquestion span{color:var(--purple);}
+
+  .selected{padding:80px 0;border-bottom:3px solid var(--ink);}
+  .sectionlabel{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:40px;gap:20px;}
+  h2{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(32px,4.4vw,54px);line-height:1;letter-spacing:-0.015em;text-transform:uppercase;}
+  h2 span{color:var(--purple);}
+  .sectionlabel .mono{font-size:12.5px;color:var(--dim);}
+  .workgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;}
+  .workitem h3{font-size:19px;letter-spacing:0.01em;margin:0 0 14px;}
+  .workitem p{font-size:17px;line-height:1.55;color:var(--body);}
+  .recognition{margin-top:54px;padding-top:26px;border-top:2px solid var(--rule);}
+  .recognition .rlabel{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+  .recognition .rnames{font-size:17.5px;color:var(--body);}
+
+  .offers{padding:80px 0;border-bottom:3px solid var(--ink);}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:3px solid var(--ink);}
+  .card{padding:34px 30px 30px;border-right:3px solid var(--ink);display:flex;flex-direction:column;background:var(--paper);}
+  .card:last-child{border-right:none;}
+  h3{font-family:'Archivo',sans-serif;font-weight:800;font-size:27px;line-height:1.05;text-transform:uppercase;letter-spacing:-0.005em;margin:12px 0 16px;}
+  .card h3{margin-top:0;}
+  .card p{font-size:17.5px;line-height:1.5;color:var(--body);margin-bottom:14px;}
+  .card ul{list-style:none;margin:2px 0 18px;}
+  .card li{font-size:16.5px;line-height:1.42;color:var(--body);padding-left:16px;position:relative;margin-bottom:10px;}
+  .card li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;background:var(--purple);}
+  .card li b{color:var(--ink);font-weight:700;}
+  .card .spacer{flex:1;}
+  .cardcta{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);text-decoration:none;border-top:2px solid var(--ink);padding-top:16px;display:block;}
+  .cardcta:hover{color:var(--purple-deep);}
+  .cardsub{font-family:'Archivo',sans-serif;font-weight:800;font-size:17px;text-transform:uppercase;letter-spacing:0.01em;margin-bottom:12px;}
+  .cardquote{border-left:2px solid var(--purple);padding-left:16px;margin:4px 0 20px;}
+  .cardquote p{font-size:16.5px;line-height:1.45;color:var(--body);margin-bottom:8px;}
+  .cardquote cite{display:block;font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.5;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);}
+  .textlink{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);text-decoration:none;display:inline-block;}
+  .textlink:hover{color:var(--purple-deep);}
+
+  .proof{padding:80px 0;border-bottom:3px solid var(--ink);}
+  .proofgrid{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:start;margin-top:40px;}
+  .video{position:relative;width:100%;padding-top:56.25%;border:3px solid var(--ink);background:var(--ink);}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .proofcopy p{font-size:19px;line-height:1.55;color:var(--body);margin-bottom:18px;}
+  .resourcelink{display:block;border:3px solid var(--ink);padding:20px 22px;text-decoration:none;margin-top:8px;}
+  .resourcelink:hover{background:#EFECE2;}
+  .resourcelink .t{font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;text-transform:uppercase;}
+  .resourcelink .d{font-size:15.5px;color:var(--dim);margin-top:4px;}
+  .resourcelink .m{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);margin-top:10px;font-weight:600;}
+
+  .about{padding:80px 0;border-bottom:3px solid var(--ink);}
+  .aboutgrid{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;margin-top:40px;align-items:start;}
+  .headshot{border:3px solid var(--ink);aspect-ratio:4/5;width:100%;height:auto;object-fit:cover;display:block;}
+  .bio p{font-size:19px;line-height:1.58;color:var(--body);margin-bottom:18px;}
+  .bio p b{color:var(--ink);font-weight:700;}
+  .bioquestion{font-family:'Archivo',sans-serif;font-weight:800;font-size:24px;line-height:1.3;color:var(--ink);padding-top:6px;}
+  .bioquestion span{color:var(--purple);}
+  .biotools{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;}
+
+  .booking{padding:90px 0;}
+  .booking .inner{max-width:920px;}
+  .booking p.lead{font-size:23px;line-height:1.5;color:var(--body);margin-top:26px;}
+  .inquiry-form{margin-top:36px;border-top:3px solid var(--ink);}
+  .formgrid{display:grid;grid-template-columns:1fr 1fr;}
+  .field{padding:20px 18px;border-bottom:2px solid var(--rule);}
+  .field:nth-child(odd){border-right:2px solid var(--rule);}
+  .field.full{grid-column:1/-1;border-right:none;}
+  label{display:block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.11em;text-transform:uppercase;color:var(--dim);margin-bottom:9px;}
+  input,select,textarea{width:100%;border:0;background:transparent;color:var(--ink);font-family:'Archivo Narrow',sans-serif;font-size:19px;line-height:1.4;outline:none;}
+  input:focus,select:focus,textarea:focus{box-shadow:0 2px 0 var(--purple);}
+  textarea{min-height:145px;resize:vertical;}
+  .formactions{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:22px;flex-wrap:wrap;}
+  .emailfallback{font-size:15px;color:var(--dim);}
+  .emailfallback a{color:var(--purple);font-weight:700;}
+  .bookmeta{margin-top:24px;font-size:13px;color:var(--dim);}
+
+  footer{border-top:3px solid var(--ink);padding:26px 0 34px;}
+  .footrow{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);}
+  .footrow a{text-decoration:none;color:var(--dim);margin-left:22px;}
+  .footrow a:first-child{margin-left:0;}
+  .footrow a:hover{color:var(--ink);}
+
+  @media (max-width:960px){
+    .careergrid,.proofgrid,.aboutgrid{grid-template-columns:1fr;}
+    .careergrid{gap:34px;}
+    .workgrid{grid-template-columns:1fr;gap:34px;}
+    .cards{grid-template-columns:1fr;}
+    .card{border-right:none;border-bottom:3px solid var(--ink);}
+    .card:last-child{border-bottom:none;}
+    .navrow{align-items:flex-start;flex-wrap:wrap;}
+    .navlinks{width:100%;gap:12px 16px;flex-wrap:wrap;}
+    .navlinks .btn{padding:10px 16px;}
+  }
+  @media (max-width:700px){
+    .sectionlabel{display:block;}
+    .sectionlabel .mono{margin-top:12px;}
+    .formgrid{grid-template-columns:1fr;}
+    .field:nth-child(odd){border-right:none;}
+    .footrow a{margin-left:14px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap navrow">
+    <a class="navname" href="#top">Elizabeth Strickler<span>.</span></a>
+    <div class="navlinks">
+      <a href="#speaking">Speaking</a>
+      <a href="#advisory">Strategy &amp; Advisory</a>
+      <a href="#labs">Experimental Labs</a>
+      <a href="#about">About</a>
+      <a class="btn" href="#book">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <div class="eyebrow mono">Emerging Technology Strategist &middot; Speaker &middot; Advisor</div>
+    <h1>I go toward what is emerging, figure out what it means, and <em>bring it back.</em></h1>
+    <p class="herosub">My work sits where technology, creativity, media, and business meet. I help leaders, creative teams, and institutions understand consequential shifts before they become ordinary, then translate those shifts into strategy, new ways of working, and original creative work.</p>
+    <p class="frontier"><span>My current frontier:</span> AI, creativity, and the future of media.</p>
+    <div class="herolinks">
+      <a href="#speaking">Invite me to speak</a>
+      <a href="#advisory">Explore advisory work</a>
+      <a href="#labs">View experimental labs</a>
+    </div>
+    <div class="herometa mono">Based in Atlanta, working internationally.</div>
+  </div>
+</header>
+
+<section class="career" aria-labelledby="career-title">
+  <div class="wrap careergrid">
+    <div>
+      <div class="eyebrow mono">A career spent looking ahead</div>
+      <h2 id="career-title">The technology changes<span>.</span> The inquiry remains<span>.</span></h2>
+    </div>
+    <div class="careercopy">
+      <p>Long before AI became the central question, I was helping establish internet infrastructure, joining Mindspring while it was still a young startup, exploring the convergence of computing and cinema, and developing new ways for artists to understand business.</p>
+      <p>At Georgia State University, I originated the early concept and technology vision for what became the Creative Media Industries Institute. I imagined a former bank trust building as a future-facing laboratory for media, technology, and interdisciplinary experimentation, designed its initial technology architecture, and created the core curriculum for its Media Entrepreneurship program.</p>
+      <p>My work has since moved through immersive media, blockchain, generative production, and artificial intelligence.</p>
+      <div class="careerquestion">What is becoming possible, what will it change, and how can people use it <span>intelligently, creatively, and humanely?</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="selected" aria-label="Selected work">
+  <div class="wrap">
+    <div class="sectionlabel">
+      <h2>Selected work<span>.</span></h2>
+      <div class="mono">Strategy, education, and creative systems</div>
+    </div>
+    <div class="workgrid">
+      <div class="workitem">
+        <h3>Georgia State University</h3>
+        <p>Directs Media Entrepreneurship and Innovation and teaches across creative and business programs. Originated the early concept and technology vision for the Creative Media Industries Institute and created the core curriculum for its Media Entrepreneurship program. Current teaching focuses on AI, creativity, innovation, and the creative industries.</p>
+      </div>
+      <div class="workitem">
+        <h3>StudioNow / Coca-Cola</h3>
+        <p>Advised creative leadership through StudioNow&rsquo;s embedded operation at Coca-Cola&rsquo;s Atlanta headquarters. Designed agentic systems, developed AI production methods, and trained producers to work with generative tools and AI creative talent.</p>
+      </div>
+      <div class="workitem">
+        <h3>Founderz &times; Microsoft</h3>
+        <p>Teaches AI and creativity in the 2026 Founderz &times; Microsoft AI and Innovation certificate program, focusing on imagination, creative direction, and producing work that moves beyond the average.</p>
+      </div>
+    </div>
+    <div class="recognition">
+      <div class="rlabel">Selected speaking and professional recognition</div>
+      <div class="rnames">TEDxAtlanta &middot; SXSW &middot; MENA ICT Forum &middot; Fulbright Specialist &middot; Directors Guild of America</div>
+    </div>
+  </div>
+</section>
+
+<section class="offers" id="speaking">
+  <div class="wrap">
+    <div class="sectionlabel">
+      <h2>Speaking, strategy, and making<span>.</span></h2>
+      <div class="mono">Ways to work together</div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Speaking</h3>
+        <p>I speak about technological and cultural shifts while their meanings are still unsettled.</p>
+        <p>My talks help audiences understand not only what is changing, but what those changes ask of creative leaders, institutions, industries, and human beings.</p>
+        <ul>
+          <li><b>Five Shifts AI Is Causing in the Creative Industries</b><br>A framework for understanding changes in creative labor, production, authorship, business models, and originality.</li>
+          <li><b>The Script Is a Prompt for Humans</b><br>What happens to authorship and taste when stories and images can be generated instantly?</li>
+          <li><b>Directed Compute</b><br>How creative leaders shape abundant machine output through intention, standards, taste, and meaning.</li>
+          <li><b>Inverting the Loop</b><br>Designing AI systems around human judgment rather than reorganizing people around the machine.</li>
+        </ul>
+        <p>Each talk is developed for its particular audience and occasion.</p>
+        <div class="spacer"></div>
+        <a class="cardcta" href="#book">Speaking inquiries &rarr;</a>
+      </div>
+
+      <div class="card" id="advisory">
+        <h3>Strategy &amp; Advisory</h3>
+        <p>I work with creative organizations, media companies, studios, universities, and leadership teams facing questions that do not yet have settled answers.</p>
+        <p>I am particularly useful when an organization knows that something significant is changing but has not yet determined what it means for its people, its creative work, or its future direction.</p>
+        <ul>
+          <li>Emerging-technology and AI strategy</li>
+          <li>Applied experimentation and prototyping</li>
+          <li>Creative workflow and production-system design</li>
+          <li>Executive education and team capability development</li>
+          <li>New program, initiative, and curriculum design</li>
+        </ul>
+        <p>I stay close to the work, from the original question through experimentation, implementation, and adoption.</p>
+        <div class="spacer"></div>
+        <a class="cardcta" href="#book">Strategy and advisory inquiries &rarr;</a>
+      </div>
+
+      <div class="card" id="labs">
+        <h3>Experimental Labs</h3>
+        <p>The fastest way to understand a new technology is to make something with it.</p>
+        <div class="cardsub">The Generative Storytelling Lab</div>
+        <p>A one-day intensive in which participants develop, direct, and screen original short films using generative production tools.</p>
+        <p>Designed for creative teams, studios, agencies, educators, and leadership groups, the lab combines story development, visual direction, experimentation, and production. Participants leave with completed work and a method they can continue using.</p>
+        <p>Additional labs can be designed around creative AI, innovation, future media, or a specific organizational challenge.</p>
+        <blockquote class="cardquote">
+          <p>&ldquo;Astonishing. Like it or not, AI is here, and it is something every filmmaker needs to understand.&rdquo;</p>
+          <cite>Tom Luse, Executive Producer, The Walking Dead</cite>
+        </blockquote>
+        <div class="spacer"></div>
+        <a class="cardcta" href="#book">Workshop and lab inquiries &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="wrap">
+    <div class="sectionlabel">
+      <h2>Films and creative experiments<span>.</span></h2>
+    </div>
+    <div class="proofgrid">
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/Tg-mGNRAQng" title="Films from the Generative Storytelling Lab and Elizabeth Strickler's students" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="proofcopy">
+        <p><b>Films from the Generative Storytelling Lab</b></p>
+        <p>A selection of short films made by students and workshop participants, many of them first-time filmmakers, during a single-day Generative Storytelling Lab.</p>
+        <p><a class="textlink" href="https://youtu.be/Tg-mGNRAQng" target="_blank" rel="noopener">Watch the films &rarr;</a></p>
+        <a class="resourcelink" href="https://app.notion.com/p/elizaday/AI-Creative-Resources-27b95c1fd7458012bb1ad0dbb0c5c993" target="_blank" rel="noopener">
+          <div class="t">AI Creative Resources</div>
+          <div class="d">A living collection of tools, references, and production resources maintained for students, workshop participants, and advisory clients.</div>
+          <div class="m">Explore the library &rarr;</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="sectionlabel">
+      <h2>About Elizabeth<span>.</span></h2>
+      <div class="mono">Biography for programs and introductions</div>
+    </div>
+    <div class="aboutgrid">
+      <img class="headshot" src="/elizabeth-strickler.jpg" alt="Elizabeth Strickler" width="800" height="1000" loading="lazy">
+      <div class="bio" id="biotext">
+        <p><b>Elizabeth Strickler</b> is an emerging-technology strategist, educator, speaker, and creative leader who has spent her career exploring what happens when new technologies meet human imagination.</p>
+        <p>She began by helping establish internet infrastructure at Georgia State University and later joined Mindspring as one of its first forty employees during the early commercial internet. She went on to work at the convergence of computing and cinema, earning degrees in philosophy, computer science, and digital filmmaking.</p>
+        <p>At Georgia State, Strickler originated the early concept and technology vision for what became the Creative Media Industries Institute, imagining a former bank trust building as a future-facing laboratory for media, technology, and interdisciplinary experimentation. She designed its initial technology architecture and created the core curriculum for its Media Entrepreneurship program. David Cheshier led the substantial administrative and institutional work required to bring the institute into being.</p>
+        <p>Her work has since spanned immersive media, blockchain, creative entrepreneurship, generative production, and artificial intelligence. Through StudioNow&rsquo;s embedded operation at Coca-Cola, she advised creative leadership, trained producers, developed AI production methods, and designed an agentic scripting system. She also teaches AI and creativity in the Founderz &times; Microsoft AI and Innovation certificate program.</p>
+        <p>Strickler has spoken at TEDxAtlanta, SXSW, and the MENA ICT Forum; produced the Directors Guild of America Atlanta AI Seminar; and founded the <i>Immersive Impact Review</i>, a peer-reviewed journal devoted to immersive media.</p>
+        <p class="bioquestion">Across every phase of her career, her work has returned to the same questions: <span>What is emerging? What will it change? And how can people use it to create something more meaningful?</span></p>
+        <div class="biotools">
+          <button class="btn ghost" id="copybio" type="button">Copy biography</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="booking" id="book">
+  <div class="wrap inner">
+    <h2>Tell me what you are trying to understand, change, or create<span>.</span></h2>
+    <p class="lead">Please include the occasion or organizational context, the audience, the timeframe, and what would make the engagement useful. I will tell you honestly whether I am the right person for it.</p>
+
+    <form class="inquiry-form" name="booking-inquiry" method="POST" data-netlify="true" netlify data-netlify-honeypot="bot-field" action="/thanks">
+      <input type="hidden" name="form-name" value="booking-inquiry">
+      <p hidden><label>Do not fill this out: <input name="bot-field"></label></p>
+      <div class="formgrid">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="organization">Organization</label>
+          <input id="organization" name="organization" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="timeframe">Date or timeframe</label>
+          <input id="timeframe" name="timeframe" type="text">
+        </div>
+        <div class="field full">
+          <label for="engagement">Type of engagement</label>
+          <select id="engagement" name="engagement" required>
+            <option value="">Choose one</option>
+            <option>Keynote or talk</option>
+            <option>Strategy or advisory engagement</option>
+            <option>Private lab or workshop</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="outcome">What are you trying to understand, change, or create?</label>
+          <textarea id="outcome" name="outcome" required></textarea>
+        </div>
+      </div>
+      <div class="formactions">
+        <button class="btn" type="submit">Send inquiry</button>
+        <div class="emailfallback">Prefer email? <a href="mailto:elizadaynight@gmail.com">elizadaynight@gmail.com</a></div>
+      </div>
+    </form>
+
+    <div class="bookmeta mono">Based in Atlanta &middot; Available for selected travel</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footrow">
+    <div>&copy; 2026 Elizaday LLC &middot; Atlanta</div>
+    <div>
+      <a href="https://www.linkedin.com/in/elizabethstrickler/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/quantum_folk/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtu.be/Tg-mGNRAQng" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('copybio').addEventListener('click', function(){
+    var ps = document.querySelectorAll('#biotext p');
+    var text = Array.prototype.map.call(ps, function(p){return p.textContent;}).join('\n\n');
+    navigator.clipboard.writeText(text).then(function(){
+      var b = document.getElementById('copybio');
+      var old = b.textContent;
+      b.textContent = 'Copied';
+      setTimeout(function(){ b.textContent = old; }, 1600);
+    });
+  });
+</script>
+
+</body>
+</html>
