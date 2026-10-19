@@ -90,7 +90,8 @@ svg.g .fill{fill:currentColor;stroke:none}
 .readings{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:0 clamp(18px,4vw,64px);text-align:center}
 .readings span{font-family:var(--f-mono);font-size:clamp(9px,1vw,12px);letter-spacing:.12em;text-transform:uppercase;color:var(--dust);line-height:1.5}
 .readings b{display:block;font-weight:500;color:var(--limestone)}
-.readings i{font-style:normal;color:var(--ochre)}
+.readings i{display:block;font-style:normal;color:var(--ochre);line-height:1.3}
+.readings span{color:var(--limestone)}
 .fig{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--rule);padding-top:12px}
 @media (hover:none){.fig .label:last-child{display:none}}
 .hero h1{margin:0;font-size:var(--t-hero);line-height:.98;max-width:13.5em}
@@ -127,11 +128,16 @@ svg.g .fill{fill:currentColor;stroke:none}
 .sign:hover .tile{color:var(--ochre);border-color:var(--ochre);background:var(--basalt-3)}
 .sign .code{font-family:var(--f-mono);font-size:var(--t-label);letter-spacing:.14em;color:var(--ochre)}
 .sign .name{margin:6px 0 18px;font-family:var(--f-display);font-size:var(--t-h3);line-height:1.1}
-.sign dl{margin:0;display:grid;gap:10px}
-.sign dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust-2)}
-.sign dd{margin:0;font-family:var(--f-mono);font-size:14px;letter-spacing:.1em;text-transform:uppercase}
-.sign dd.old{color:var(--dust);text-decoration:line-through;text-decoration-color:var(--ochre);text-decoration-thickness:1px}
-.sign dd.new{color:var(--limestone)}
+.pair{display:grid;gap:10px}
+.pair-label{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust-2)}
+.tension{display:grid;justify-items:start}
+.pole{font-family:var(--f-mono);font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--limestone);line-height:1.2}
+.cord{position:relative;width:1.5px;height:72px;margin:9px 0 9px 7px;background:linear-gradient(var(--dust-2),var(--rule) 50%,var(--dust-2))}
+.cord .pull{position:absolute;left:50%;top:50%;width:11px;height:11px;border-radius:50%;background:var(--ochre);box-shadow:0 0 0 5px var(--ochre-glow);transform:translate(-50%,-50%);animation:pull 6.5s ease-in-out var(--delay,0s) infinite alternate}
+.cord .pull::before{content:"";position:absolute;left:50%;top:50%;width:26px;height:1.5px;background:var(--ochre);transform:translate(-50%,-50%)}
+@keyframes pull{from{top:20%}to{top:80%}}
+.sign:hover .cord .pull{animation-duration:2.6s}
+@media (prefers-reduced-motion:reduce){.cord .pull{animation:none}}
 .gloss{min-width:0;display:grid;gap:16px}
 .gloss p{margin:0;max-width:36em;font-size:var(--t-lead);line-height:1.5}
 .gloss .det,.gloss .inst{margin:0;font-size:var(--t-small);color:var(--dust);max-width:44em}
@@ -265,11 +271,11 @@ svg.g .fill{fill:currentColor;stroke:none}
           <div class="cell"><svg class="g hero-g" data-g="wired" viewBox="0 0 64 64"></svg></div>
         </div>
         <div class="readings" aria-hidden="true" style="margin-top:16px">
-          <span><b>Craft</b><i>to</i> Curation</span>
-          <span><b>IP</b><i>to</i> Influence</span>
-          <span><b>Labor</b><i>to</i> Leverage</span>
-          <span><b>Workflow</b><i>to</i> Worlds</span>
-          <span><b>Audience</b><i>to</i> Ecosystem</span>
+          <span><b>Craft</b><i aria-hidden="true">&#8597;</i> Curation</span>
+          <span><b>IP</b><i aria-hidden="true">&#8597;</i> Influence</span>
+          <span><b>Labor</b><i aria-hidden="true">&#8597;</i> Leverage</span>
+          <span><b>Workflow</b><i aria-hidden="true">&#8597;</i> Worlds</span>
+          <span><b>Audience</b><i aria-hidden="true">&#8597;</i> Ecosystem</span>
         </div>
       </div>
 
@@ -284,7 +290,7 @@ svg.g .fill{fill:currentColor;stroke:none}
       </div>
 
       <div class="fig">
-        <span class="label">Fig. 1 · Five signs in transition, read left to right</span>
+        <span class="label">Fig. 1 · Five signs, each pulling two ways</span>
         <span class="label">Move your light across the wall</span>
       </div>
     </div>
@@ -296,7 +302,7 @@ svg.g .fill{fill:currentColor;stroke:none}
         <span class="label">Register I · Sign list</span>
         <div>
           <h2 class="display">A script for a shift still in progress</h2>
-          <p>Five signs I use to read what AI is doing to creative work. Each carries an old reading and a new one. Most organizations are living between the two, which is where the friction, the fear and the opportunity sit.</p>
+          <p>Five signs I use to read what AI is doing to creative work. Each has two readings that pull against each other, and neither one cancels the other. Most organizations are living inside that pull, which is where the friction, the fear and the opportunity sit.</p>
         </div>
       </div>
 
@@ -306,10 +312,10 @@ svg.g .fill{fill:currentColor;stroke:none}
           <div>
             <div class="code">ES 1</div>
             <h3 class="name">Radiant eye</h3>
-            <dl><dt>Old reading</dt><dd class="old">Craft</dd><dt>New reading</dt><dd class="new">Curation</dd></dl>
+            <div class="pair"><span class="pair-label">Two readings, both live</span><div class="tension" style="--delay:-0.0s" role="img" aria-label="Craft and Curation, held in tension"><span class="pole">Craft</span><span class="cord" aria-hidden="true"><span class="pull"></span></span><span class="pole">Curation</span></div></div>
           </div>
           <div class="gloss">
-            <p>Technical skill is getting cheap. Taste is getting scarce. Value moves from the ability to make to the ability to choose, and most of choosing is knowing what to leave out.</p>
+            <p>Technical skill is getting cheap and taste is getting scarce, yet taste is trained by making. The ability to choose rises in value, and the eye that chooses well still comes from the hands.</p>
             <p class="det"><b>Determinative of</b>taste, judgment, selection, omission</p>
             <p class="inst"><b>Instruction</b>Build a practice that sharpens your taste and makes it visible. Lean into your weird. Get known for it.</p>
           </div>
@@ -320,7 +326,7 @@ svg.g .fill{fill:currentColor;stroke:none}
           <div>
             <div class="code">ES 2</div>
             <h3 class="name">Radiant head</h3>
-            <dl><dt>Old reading</dt><dd class="old">IP</dd><dt>New reading</dt><dd class="new">Influence</dd></dl>
+            <div class="pair"><span class="pair-label">Two readings, both live</span><div class="tension" style="--delay:-1.7s" role="img" aria-label="IP and Influence, held in tension"><span class="pole">IP</span><span class="cord" aria-hidden="true"><span class="pull"></span></span><span class="pole">Influence</span></div></div>
           </div>
           <div class="gloss">
             <p>Value used to sit in owning a finished asset. More and more of it sits in circulation: who carries an idea, who remixes it, and who keeps coming back.</p>
@@ -334,7 +340,7 @@ svg.g .fill{fill:currentColor;stroke:none}
           <div>
             <div class="code">ES 3</div>
             <h3 class="name">Open figure</h3>
-            <dl><dt>Old reading</dt><dd class="old">Labor</dd><dt>New reading</dt><dd class="new">Leverage</dd></dl>
+            <div class="pair"><span class="pair-label">Two readings, both live</span><div class="tension" style="--delay:-3.4s" role="img" aria-label="Labor and Leverage, held in tension"><span class="pole">Labor</span><span class="cord" aria-hidden="true"><span class="pull"></span></span><span class="pole">Leverage</span></div></div>
           </div>
           <div class="gloss">
             <p>Large, role-based crews give way to small teams with outsized reach. When the machine can supply the hours, the scarce input becomes direction.</p>
@@ -348,7 +354,7 @@ svg.g .fill{fill:currentColor;stroke:none}
           <div>
             <div class="code">ES 4</div>
             <h3 class="name">Concentric rings</h3>
-            <dl><dt>Old reading</dt><dd class="old">Workflow</dd><dt>New reading</dt><dd class="new">Worldbuilding</dd></dl>
+            <div class="pair"><span class="pair-label">Two readings, both live</span><div class="tension" style="--delay:-5.1s" role="img" aria-label="Workflow and Worldbuilding, held in tension"><span class="pole">Workflow</span><span class="cord" aria-hidden="true"><span class="pull"></span></span><span class="pole">Worldbuilding</span></div></div>
           </div>
           <div class="gloss">
             <p>Script, shoot, edit is a line. A world is a system you return to: characters, lore and assets that hold together across formats and keep producing stories.</p>
@@ -362,7 +368,7 @@ svg.g .fill{fill:currentColor;stroke:none}
           <div>
             <div class="code">ES 5</div>
             <h3 class="name">Wired head</h3>
-            <dl><dt>Old reading</dt><dd class="old">Audience</dd><dt>New reading</dt><dd class="new">Ecosystem</dd></dl>
+            <div class="pair"><span class="pair-label">Two readings, both live</span><div class="tension" style="--delay:-6.8s" role="img" aria-label="Audience and Ecosystem, held in tension"><span class="pole">Audience</span><span class="cord" aria-hidden="true"><span class="pull"></span></span><span class="pole">Ecosystem</span></div></div>
           </div>
           <div class="gloss">
             <p>The audience stops sitting in the dark. It talks back, makes things, and expects to be let in.</p>
