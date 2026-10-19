@@ -154,6 +154,20 @@ svg.g .fill{fill:currentColor;stroke:none}
 .inscription .sub strong{color:var(--limestone);font-weight:500}
 @media (max-width:640px){.ring{border-radius:56px}}
 
+/* media slots */
+.media{position:relative;margin:0;overflow:hidden;border:1px solid var(--rule);background:var(--basalt-2)}
+.media video,.media img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08) brightness(.92);transition:filter .6s}
+.media:hover video,.media:hover img{filter:grayscale(.15) contrast(1.05)}
+.tablet .media{aspect-ratio:16/9;margin:0 -26px 4px;border:0;border-bottom:1px solid var(--rule)}
+.media.wide{aspect-ratio:21/9;max-width:100%}
+.media.stage{margin-bottom:40px}
+.media-mark{position:absolute;top:16px;left:16px;width:46px;height:46px;border-radius:50%;background:var(--ochre);color:var(--on-ochre);display:grid;place-items:center}
+.media-mark svg{width:30px;height:30px;stroke-width:2.6}
+.media figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:end;gap:12px;padding:40px 20px 16px;background:linear-gradient(transparent,rgba(19,17,14,.85))}
+.media figcaption a{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ochre)}
+.film-band .wrap{padding-block:72px 0}
+@media (max-width:640px){.media.wide{aspect-ratio:16/10}}
+
 /* records */
 .records{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .tablet{border:1px solid var(--rule);background:var(--basalt-2);padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0}
@@ -374,6 +388,17 @@ svg.g .fill{fill:currentColor;stroke:none}
     </div>
   </section>
 
+  <!-- MEDIA SLOT: upload media/film.mp4 and media/film.jpg. Hidden until the files exist. -->
+  <section class="film-band" data-media hidden>
+    <div class="wrap">
+      <figure class="media wide">
+        <video data-src="media/film.mp4" data-poster="media/film.jpg" muted loop playsinline preload="none" aria-label="Excerpt from one of Elizabeth Strickler's AI films"></video>
+        <span class="media-mark" aria-hidden="true"><svg class="g" data-g="rings" viewBox="0 0 64 64"></svg></span>
+        <figcaption><span class="label">From my films</span><a href="https://youtu.be/Tg-mGNRAQng" target="_blank" rel="noopener">Watch the full film</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section class="register" id="work">
     <div class="wrap">
       <div class="reg-head">
@@ -401,6 +426,10 @@ svg.g .fill{fill:currentColor;stroke:none}
 
         <article class="tablet">
           <div class="top"><span class="label">Lab</span><svg class="g" data-g="eye" viewBox="0 0 64 64" aria-hidden="true"></svg></div>
+          <!-- MEDIA SLOT: upload media/lab.mp4 and media/lab.jpg -->
+          <figure class="media" data-media hidden>
+            <video data-src="media/lab.mp4" data-poster="media/lab.jpg" muted loop playsinline preload="none" aria-label="Participants screening the films they made in a Generative Storytelling Lab"></video>
+          </figure>
           <h3>The Generative Storytelling Lab</h3>
           <p>A one-day intensive where participants develop, direct and screen original short films with generative tools. <strong>Ten full-day intensives</strong> run so far for industry professionals. People understand AI fastest by making something with it and watching it in a room together.</p>
           <blockquote class="quote"><p>&ldquo;Astonishing. Like it or not, AI is here, and it is something every filmmaker needs to understand.&rdquo;</p><cite>Tom Luse, Executive Producer, The Walking Dead</cite></blockquote>
@@ -443,6 +472,11 @@ svg.g .fill{fill:currentColor;stroke:none}
         </div>
       </div>
 
+      <!-- MEDIA SLOT: upload media/stage.jpg -->
+      <figure class="media wide stage" data-media hidden>
+        <img data-src="media/stage.jpg" alt="Elizabeth Strickler speaking to a full room" loading="lazy">
+        <span class="media-mark" aria-hidden="true"><svg class="g" data-g="figure" viewBox="0 0 64 64"></svg></span>
+      </figure>
       <div class="talks">
         <article class="talk"><svg class="g" data-g="rings" viewBox="0 0 64 64" aria-hidden="true"></svg><h3>Five Tensions Reshaping the Creative Industries</h3><p>The sign list, live. What is moving in creative labor, authorship, production systems and business models, and how to navigate each shift.</p></article>
         <article class="talk"><svg class="g" data-g="cartouche" viewBox="0 0 64 64" aria-hidden="true"></svg><h3>The Product Is Not Proof</h3><p>What counts as evidence of learning, skill and authorship when the finished output can be generated. For educators and anyone who hires.</p></article>
@@ -677,6 +711,21 @@ svg.g .fill{fill:currentColor;stroke:none}
       row.addEventListener('pointerenter',()=>inscribe(svg,0,'.8s'));
     });
   }
+
+  // ---- media slots: show only when the file is actually in the repo
+  document.querySelectorAll('[data-media]').forEach(slot=>{
+    const el=slot.querySelector('[data-src]'); if(!el) return;
+    const src=el.dataset.src;
+    fetch(src,{method:'HEAD'}).then(r=>{
+      if(!r.ok) return;
+      if(el.dataset.poster) el.poster=el.dataset.poster;
+      el.src=src; slot.hidden=false;
+      if(el.tagName==='VIDEO'){
+        if(still){ el.removeAttribute('autoplay'); return; }
+        new IntersectionObserver(es=>es.forEach(e=>{ e.isIntersecting ? el.play().catch(()=>{}) : el.pause(); }),{threshold:.25}).observe(slot);
+      }
+    }).catch(()=>{});
+  });
 
   // ---- copy address
   const btn=document.getElementById('copy'), addr=document.getElementById('addr');
